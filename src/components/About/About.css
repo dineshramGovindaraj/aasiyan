@@ -1,0 +1,29 @@
+.about-head {
+  color: var(--Solid-Heading-Dark-mode, #ccc);
+  text-align: center;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  margin-top: 50px;
+}
+.about-para {
+  color: var(--light-Content, #ffff);
+  text-align: justify;
+  font-size: 21px;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 40px;
+  line-height: 30px;
+}
+@media only screen and (max-width: 600px) {
+  .about-head {
+    font-size: 40px;
+  }
+  .about-para {
+    font-size: 17px;
+    line-height: 19px;
+    word-spacing: 1px;
+    text-align: center;
+  }
+}

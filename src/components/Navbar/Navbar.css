@@ -36,6 +36,14 @@
   padding-bottom: 2px;
   border-bottom: 5px solid #90e0ef;
 }
+.navbar {
+  transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled {
+  background-color: #000; /* Change this to the color you want when scrolled */
+}
+
 @media only screen and (max-width: 600px) {
   .navbar-nav .nav-item {
     padding: 0px 0px;

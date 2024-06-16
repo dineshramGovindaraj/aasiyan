@@ -53,13 +53,34 @@
 
 // export default Navbar;
 import "./Navbar.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 150) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <>
       <section id="navbar">
-        <nav className="navbar navbar-expand-lg fixed-top">
+        <nav
+          className={`navbar navbar-expand-lg fixed-top ${
+            scrolled ? "scrolled" : ""
+          }`}
+        >
           <a className="navbar-brand" style={{ color: "white" }} href="#.com">
             <b>AASIYAN</b>
           </a>
@@ -75,7 +96,7 @@ const Navbar = () => {
           </button>
           <div
             className="offcanvas offcanvas-end"
-            tabindex="-1"
+            tabIndex="-1"
             id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel"
             style={{ width: "75%", backgroundColor: "#03045e" }}
