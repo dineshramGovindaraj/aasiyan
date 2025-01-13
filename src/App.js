@@ -4,10 +4,10 @@ import Home from "./pages/Home/Home";
 
 function App() {
   return (
-    <div className="app">
-      {/* <Navbar />
-      <Home /> */}
-      Hello
+    <div>
+      <Navbar />
+      <Home />
+      {/* Hello */}
     </div>
   );
 }
